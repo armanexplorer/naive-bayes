@@ -1,0 +1,3 @@
+[submodule "persian-stopwords"]
+	path = persian-stopwords
+	url = https://github.com/kharazi/persian-stopwords.git
