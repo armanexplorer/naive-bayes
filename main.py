@@ -12,9 +12,10 @@ from sklearn.neighbors import KNeighborsClassifier
 
 sns.set_theme()
 
+import warnings
+
 import matplotlib.pyplot as plt
 
-import warnings
 # Prevent from stop-words warning
 warnings.filterwarnings("ignore")
 
@@ -99,7 +100,17 @@ print("\n", nb_res.to_string(index=False))
 print("\n", knn_res.to_string(index=False))
 print("\n", knn_tfidf_res.to_string(index=False))
 
-# cm = confusion_matrix(y_test, y_pred)
+# Calculate confusion matrix
+nb_cm = confusion_matrix(y_test, nb_y_pred)
+knn1_cm = confusion_matrix(y_test, knn1_y_pred)
+knn5_cm = confusion_matrix(y_test, knn5_y_pred)
+knn15_cm = confusion_matrix(y_test, knn15_y_pred)
+knn1_tfidf_cm = confusion_matrix(y_test, knn1_tfidf_y_pred)
+knn5_tfidf_cm = confusion_matrix(y_test, knn5_tfidf_y_pred)
+knn15_tfidf_cm = confusion_matrix(y_test, knn15_tfidf_y_pred)
+
+# Print confusion matrix
+# print(knn5_tfidf_cm)
 # cm_matrix = pd.DataFrame(data=cm, index=[], columns=[])
 # print(accuracy)
 # print(cm)
